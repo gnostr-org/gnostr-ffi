@@ -5,21 +5,22 @@ else
 endif
 
 all: target/double
-	target/double
+	@target/double
+	@cargo run -q
 
 target:
-	mkdir -p $@
+	@mkdir -p $@
 
 target/double: target/main.o target/debug/libgnostr.a
-	$(CC) -o $@ $^ $(LDFLAGS)
+	@$(CC) -o $@ $^ $(LDFLAGS)
 
 target/debug/libgnostr.a: src/lib.rs Cargo.toml
-	cargo build
+	@cargo build
 
 target/main.o: src/main.c | target
-	echo $@
-	echo $<
-	$(CC) -o $@ -c $<
+#echo $@
+#echo $<
+	@$(CC) -o $@ -c $<
 
 clean:
 	rm -rf target
