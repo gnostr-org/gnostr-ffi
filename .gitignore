@@ -1,3 +1,5 @@
 Cargo.lock
 target
 node_modules
+cpp-to-rust/run
+swift-to-rust/double
