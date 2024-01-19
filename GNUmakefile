@@ -30,10 +30,12 @@ rust-to-fortran
 ##     );
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-all:$(PROJECTS)## 	all
-.PHONY:$(PROJECTS)
+.PHONY:$(PROJECTS) gnostr
+all:$(PROJECTS) gnostr## 	all
+gnostr:## 	gnostr
+	@cd gnostr && make
 $(PROJECTS):##
-	cd $@ && cargo b
+	cd $@ && cargo b && make || true
 	cd $@ && cargo t
 rust-to-fortran:## 	rust-to-fortran
 	cd rust-to-fortran && cargo b && cargo t
