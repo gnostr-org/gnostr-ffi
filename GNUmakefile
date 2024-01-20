@@ -13,7 +13,6 @@ node-to-rust\
 perl-to-rust\
 php-to-rust\
 python-to-rust\
-ruby-to-rust\
 rust-to-c\
 rust-to-cmake\
 rust-to-cpp\
@@ -23,6 +22,8 @@ export PROJECTS
 
 FORTRAN=\
 rust-to-fortran
+RUBY=\
+ruby-to-rust
 
 -:
 ## 	@( \
@@ -30,7 +31,7 @@ rust-to-fortran
 ##     );
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-.PHONY:$(PROJECTS) gnostr
+.PHONY:$(PROJECTS) gnostr rust-to-fortran ruby-to-rust
 all:$(PROJECTS) gnostr## 	all
 gnostr:## 	gnostr
 	@cd gnostr && make
@@ -39,3 +40,5 @@ $(PROJECTS):##
 	cd $@ && cargo t
 rust-to-fortran:## 	rust-to-fortran
 	cd rust-to-fortran && cargo b && cargo t
+ruby-to-rust:## 	ruby-to-rust
+	cd ruby-to-rust && cargo b && cargo t
