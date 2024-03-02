@@ -5,3 +5,5 @@ cpp-to-rust/run
 swift-to-rust/double
 csharp-to-rust/double.exe
 csharp-to-rust/libdouble_input
+
+**.DS_Store
