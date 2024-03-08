@@ -7,3 +7,5 @@ authors = ["Livio Ribeiro <livioribeiro@outlook.com>"]
 [lib]
 name = "double_input"
 crate-type = ["dylib"]
+
+[workspace]

@@ -14,9 +14,9 @@ perl-to-rust\
 php-to-rust\
 python-to-rust\
 rust-to-c\
-rust-to-cmake\
-rust-to-cpp\
-rust-to-go-dynamic\
+##rust-to-cmake\
+##rust-to-cpp\
+##rust-to-go-dynamic\
 swift-to-rust
 export PROJECTS
 
@@ -25,7 +25,7 @@ rust-to-fortran
 RUBY=\
 ruby-to-rust
 
--:
+default:
 ## 	@( \
 ##     LIST=$$(find * -maxdepth 0 -type d) && for e in $$LIST; do echo "$$e"; done;\
 ##     );
@@ -42,3 +42,5 @@ rust-to-fortran:## 	rust-to-fortran
 	cd rust-to-fortran && cargo b && cargo t
 ruby-to-rust:## 	ruby-to-rust
 	cd ruby-to-rust && cargo b && cargo t
+
+-include Makefile

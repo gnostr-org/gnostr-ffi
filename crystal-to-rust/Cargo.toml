@@ -6,3 +6,5 @@ authors = ["Calvin Hill <calvin@hakobaito.co.uk>"]
 [lib]
 name = "double_input"
 crate-type = ["dylib"]
+
+[workspace]

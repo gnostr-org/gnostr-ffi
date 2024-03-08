@@ -6,3 +6,5 @@ authors = ["Nicolas Far <nicofff@gmail.com>"]
 [lib]
 name = "double_input"
 crate-type = ["dylib"]
+
+[workspace]

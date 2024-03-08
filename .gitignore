@@ -7,3 +7,8 @@ csharp-to-rust/double.exe
 csharp-to-rust/libdouble_input
 
 **.DS_Store
+
+
+# Added by cargo
+
+/target

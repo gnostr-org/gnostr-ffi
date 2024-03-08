@@ -7,3 +7,5 @@ authors = ["Hao Wu <echowuhao@gmail.com>"]
 [lib]
 name = "double_input"
 crate-type = ["dylib"]
+
+[workspace]
